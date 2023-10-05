@@ -28,7 +28,7 @@ public class BaseTest {
         actions = new Actions(driver);
 
         driver.manage().window().maximize();
-        driver.get("https://the-internet.herokuapp.com/login");
+        driver.get("https://the-internet.herokuapp.com");
     }
     @After
     public void tearDown(){
