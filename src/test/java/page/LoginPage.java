@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
-public class FormAuthenticationPage extends BaseTest {
-     public FormAuthenticationPage () {PageFactory.initElements(driver, this);}
+public class LoginPage extends BaseTest {
+     public LoginPage() {PageFactory.initElements(driver, this);}
 
      @FindBy(id = "username")
      WebElement usernameInputField;
