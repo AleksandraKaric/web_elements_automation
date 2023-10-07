@@ -31,7 +31,7 @@ public class BaseTest {
         driver.get("https://the-internet.herokuapp.com");
     }
     @After
-    public void tearDown(){
+    public void tearDown(){ //TODO podsetnik: Otkomentarisi ovo ispod kad zavrsis pisanje svih testova
         //driver.close(); // zatvara tab koji je trenutno u fokusu
         //driver.quit();  // zatvara ceo browser
     }
