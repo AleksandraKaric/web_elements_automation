@@ -15,7 +15,7 @@ public class HomePage extends BaseTest {
     @FindBy(linkText = "Form Authentication")
     WebElement formAuthenticationLink;
 
-    public void FormAuthenticationLinkClick(){
+    public void formAuthenticationLinkClick(){
         wdWait.until(ExpectedConditions.visibilityOf(formAuthenticationLink));
         actions.scrollToElement(formAuthenticationLink).perform();
         formAuthenticationLink.click();
