@@ -4,7 +4,6 @@ import base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends BaseTest {
@@ -16,8 +15,8 @@ public class HomePage extends BaseTest {
     WebElement formAuthenticationLink;
 
     public void formAuthenticationLinkClick(){
-        wdWait.until(ExpectedConditions.visibilityOf(formAuthenticationLink));
-        actions.scrollToElement(formAuthenticationLink).perform();
+        wdWait.until(ExpectedConditions.elementToBeClickable(formAuthenticationLink));
+       // actions.scrollToElement(formAuthenticationLink).perform();
         formAuthenticationLink.click();
     }
 }

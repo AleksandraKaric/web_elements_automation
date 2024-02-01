@@ -1,9 +1,11 @@
 package base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,12 +19,12 @@ public class BaseTest {
     public void setUp(){
         // WebDriverManager.firefoxdriver().setup();
         // WebDriver driver = new FirefoxDriver();
-        //WebDriverManager.chromedriver().setup();
-        //ChromeOptions co = new ChromeOptions();
-        // co.addArguments("--remote-allow-origins=*");
-        //driver = new ChromeDriver( co );
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions co = new ChromeOptions();
+        co.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver( co );
 
-        WebDriver driver = new ChromeDriver();
+        //WebDriver driver = new ChromeDriver();
 
         wdWait = new WebDriverWait(driver, Duration.ofSeconds(25));
         actions = new Actions(driver);
