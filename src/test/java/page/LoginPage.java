@@ -22,6 +22,7 @@ public class LoginPage extends BaseTest {
      @FindBy (id = "flash")
      WebElement usernameInvalidFlashMessage;
 
+
      public void usernameInputFieldSendKeys (String username){
           wdWait.until(ExpectedConditions.visibilityOf(usernameInputField)).clear();
           usernameInputField.sendKeys(username);

@@ -14,9 +14,18 @@ public class HomePage extends BaseTest {
     @FindBy(linkText = "Form Authentication")
     WebElement formAuthenticationLink;
 
+    @FindBy(linkText = "Basic Auth")
+    WebElement basicAuthLink;
+
     public void formAuthenticationLinkClick(){
         wdWait.until(ExpectedConditions.elementToBeClickable(formAuthenticationLink));
        // actions.scrollToElement(formAuthenticationLink).perform();
         formAuthenticationLink.click();
+    }
+
+    public void basicAuthLinkClick(){
+        wdWait.until(ExpectedConditions.elementToBeClickable(basicAuthLink));
+       // actions.scrollToElement(basicAuthLink).perform();
+        basicAuthLink.click();
     }
 }

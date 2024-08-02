@@ -24,14 +24,44 @@ public class FormAuthenticationTest extends BaseTest {
     }
 
     @Test
-    public void SuccessfulLogin (){
+    public void SuccessfulLogin() {
         homePage.formAuthenticationLinkClick();
         loginPage.usernameInputFieldSendKeys("tomsmith");
         loginPage.passwordInputFieldSendKeys("SuperSecretPassword!");
         loginPage.loginButtonClick();
+        //try to get page title and assert that it is on the right page
         driver.getTitle();
 
         Assert.assertTrue(secureAreaPage.successfulLoginAlertIsDisplayed());
-        Assert.assertEquals("You logged into a secure area!\n" + "×", secureAreaPage.successfulLoginAlertGetText());
+        Assert.assertEquals("You logged into a secure area!\n" + "×",
+                secureAreaPage.successfulLoginAlertGetText());
     }
+
+
+    @Test
+    public void UnsuccessfulLoginLeavingBlankInputFields() {
+    homePage.formAuthenticationLinkClick();
+    loginPage.loginButtonClick();
+
+        Assert.assertTrue(loginPage.usernameInvalidFlashMessageIsDisplayed());
+        Assert.assertEquals("Your username is invalid!\n" + "×",
+               loginPage.usernameInvalidFlashMessageGetText());
+
+    }
+
+    @Test
+    public void UnsuccessfulLogin() {
+        homePage.formAuthenticationLinkClick();
+        loginPage.usernameInputFieldSendKeys("tomsmith");
+        loginPage.passwordInputFieldSendKeys("SuperSecretPassword!");
+        loginPage.loginButtonClick();
+        //try to get page title and assert that it is on the right page
+        driver.getTitle();
+
+        Assert.assertTrue(secureAreaPage.successfulLoginAlertIsDisplayed());
+        Assert.assertEquals("You logged into a secure area!\n" + "×",
+                secureAreaPage.successfulLoginAlertGetText());
+    }
+
+
 }
