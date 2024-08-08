@@ -17,6 +17,9 @@ public class HomePage extends BaseTest {
     @FindBy(linkText = "Basic Auth")
     WebElement basicAuthLink;
 
+    @FindBy(linkText = "Checkboxes")
+    WebElement checkboxesLink;
+
     public void formAuthenticationLinkClick(){
         wdWait.until(ExpectedConditions.elementToBeClickable(formAuthenticationLink));
        // actions.scrollToElement(formAuthenticationLink).perform();
@@ -27,5 +30,10 @@ public class HomePage extends BaseTest {
         wdWait.until(ExpectedConditions.elementToBeClickable(basicAuthLink));
        // actions.scrollToElement(basicAuthLink).perform();
         basicAuthLink.click();
+
+    }public void checkboxesLinkClick(){
+        wdWait.until(ExpectedConditions.elementToBeClickable(checkboxesLink));
+       // actions.scrollToElement(checkboxesLink).perform();
+        checkboxesLink.click();
     }
 }
